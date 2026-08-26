@@ -1343,17 +1343,6 @@ def page_posture():
                "back up. Six minutes a day, plus five desk rules, plus a plan that "
                "already pulls more than it pushes.")
 
-    st.subheader("First, one honest note")
-    st.write("Rounded upper back and a forward head are the normal cost of long "
-             "reading hours, and they respond very well to exactly this routine. "
-             "Visibly uneven shoulders are usually one-sided habit too, but they "
-             "deserve one professional look: book a single session with a "
-             "physiotherapist, ideally before the barbell lifts around week 9 to 12, "
-             "and ask them to screen your spine and shoulder mechanics. If they "
-             "clear you, train with total confidence. See a doctor promptly if you "
-             "ever have numbness, tingling, sharp back pain, or pain running down "
-             "an arm or leg. This page is training, not treatment.")
-
     st.subheader("The daily six minutes")
     rows = [{"Drill": d["name"], "Dose": d["dose"], "Cue": d["cue"], "Tutorial": d["link"]}
             for d in POSTURE_PROTOCOL]
