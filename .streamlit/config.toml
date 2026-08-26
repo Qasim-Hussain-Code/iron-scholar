@@ -1,0 +1,13 @@
+# Place this file at .streamlit/config.toml inside your project folder.
+# It sets the base look; app.py adds the typography on top.
+
+[theme]
+base = "light"
+primaryColor = "#2f4b3f"
+backgroundColor = "#f5f4ef"
+secondaryBackgroundColor = "#ece9df"
+textColor = "#20201b"
+font = "serif"
+
+[browser]
+gatherUsageStats = false
