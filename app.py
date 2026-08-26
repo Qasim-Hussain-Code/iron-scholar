@@ -171,6 +171,12 @@ PLAN = {
              "sets": 3, "reps": "10-15", "start": "10-15 kg", "rest": 60,
              "cue": "Face away from the stack, elbows point forward, feel the stretch behind the arm.",
              "link": yt("overhead cable tricep extension form")},
+            {"name": "Band Pull-Apart", "zh": "彈力帶拉開",
+             "machine": "Functional zone resistance band; light reverse cable fly if no band is free",
+             "sets": 2, "reps": "15-20", "start": "light band", "rest": 45,
+             "cue": "Arms straight at shoulder height, pull the band apart to the chest by "
+                    "squeezing the shoulder blades down and back. The posture anchor of every push day.",
+             "link": yt("band pull apart proper form")},
         ]},
     1: {"title": "Pull A", "focus": "Back, rear delts, biceps", "type": "lift",
         "exercises": [
@@ -238,6 +244,8 @@ PLAN = {
             "Full-body stretch, 30 s per side: hip flexor, hamstring, quad, chest doorway, "
             "lat hang, figure-4 glute, calf on a step.",
             "Optional: sauna or steam room, 8 to 10 min, then an extra 500 ml of water.",
+            "The six-minute Posture Protocol, full version: see the Posture page. "
+            "On recovery day, do every drill twice.",
         ]},
     4: {"title": "Push B", "focus": "Chest, shoulders, triceps, variations", "type": "lift",
         "exercises": [
@@ -265,6 +273,12 @@ PLAN = {
              "sets": 3, "reps": "8-12", "start": "assist 25-35 kg", "rest": 75,
              "cue": "Torso leaning slightly forward, elbows point back, upper arms to parallel.",
              "link": yt("assisted dip machine proper form")},
+            {"name": "Band Pull-Apart", "zh": "彈力帶拉開",
+             "machine": "Functional zone resistance band; light reverse cable fly if no band is free",
+             "sets": 2, "reps": "15-20", "start": "light band", "rest": 45,
+             "cue": "Arms straight at shoulder height, pull the band apart to the chest by "
+                    "squeezing the shoulder blades down and back. The posture anchor of every push day.",
+             "link": yt("band pull apart proper form")},
         ]},
     5: {"title": "Pull B", "focus": "Back, biceps, grip", "type": "lift",
         "exercises": [
@@ -288,10 +302,12 @@ PLAN = {
              "sets": 3, "reps": "10-12", "start": "5-7.5 kg each", "rest": 60,
              "cue": "Palms facing each other the whole rep. Forearms and brachialis.",
              "link": yt("hammer curl proper form")},
-            {"name": "Farmer Carry", "zh": "農夫走路", "machine": "Free weights",
-             "sets": 3, "reps": "30-40 m", "start": "12.5-16 kg each", "rest": 90,
-             "cue": "Heaviest dumbbells you can hold with tall, perfect posture. Walk straight.",
-             "link": yt("farmer carry proper form benefits")},
+            {"name": "Suitcase Carry", "zh": "單手農夫走路", "machine": "Free weights, one dumbbell",
+             "sets": 3, "reps": "30 m per side", "start": "14-16 kg", "rest": 60,
+             "cue": "One dumbbell, one side. Walk tall without leaning or letting the loaded "
+                    "shoulder drop. This trains the exact muscles that keep two shoulders at "
+                    "the same height. Swap sides each length.",
+             "link": yt("suitcase carry proper form")},
         ]},
     6: {"title": "Legs B", "focus": "Hinge, glutes, core. Deliberately lighter.", "type": "lift",
         "exercises": [
@@ -333,6 +349,46 @@ RULES = [
     "Sharp joint pain: stop that exercise. Soreness is fine; pain is information.",
     "Wrecked or slept under 6 hours: do the Active Recovery template instead. "
     "The calendar never breaks, only the intensity flexes.",
+    "Pulling volume never drops below pushing volume. For a reader's spine, "
+    "posture is protected by the back of the body.",
+    "Six minutes of the Posture Protocol daily. It has its own tick on the "
+    "ledger because it only works as a habit.",
+]
+
+# About six minutes, no equipment, doable at the desk or bedside.
+POSTURE_PROTOCOL = [
+    {"name": "Chin Tucks",
+     "dose": "2 x 10, hold 2 s each",
+     "cue": "Glide the head straight back to make a double chin, eyes level, neck long. "
+            "This wakes the deep neck muscles that reading turns off.",
+     "link": yt("chin tuck exercise forward head posture")},
+    {"name": "Wall Slides",
+     "dose": "2 x 10, slow",
+     "cue": "Back, head, elbows and wrists against the wall. Slide the arms up only as far "
+            "as everything keeps contact. Lower with control.",
+     "link": yt("wall slide exercise shoulder posture")},
+    {"name": "Thoracic Extension over Chair Back",
+     "dose": "8 to 10 slow reps",
+     "cue": "Hands behind head, arch the upper back backward over the top edge of your chair. "
+            "Bend the stiff mid-back, not the lower back. A foam roller on the floor works "
+            "the same way.",
+     "link": yt("thoracic extension foam roller chair")},
+    {"name": "Doorway Pec Stretch",
+     "dose": "30 s per side",
+     "cue": "Forearm on the door frame, elbow at shoulder height, step through until the "
+            "front of the shoulder stretches. Comfortable, never painful.",
+     "link": yt("doorway pec stretch posture")},
+    {"name": "Prone Y-T-W",
+     "dose": "2 x 8 per letter",
+     "cue": "Face down on the bed, thumbs up. Lift the arms into a Y, then a T, then a W, "
+            "squeezing the lower shoulder blades together each time. Neck stays relaxed. "
+            "This is the direct antidote to desk shoulders.",
+     "link": yt("prone y t w raises lower trap")},
+    {"name": "Upper Trap Stretch",
+     "dose": "30 s per side",
+     "cue": "Ear toward one shoulder, opposite arm reaching gently toward the floor. "
+            "On your higher shoulder side, do a second round.",
+     "link": yt("upper trapezius stretch")},
 ]
 
 # -----------------------------------------------------------------------------
@@ -769,10 +825,10 @@ def page_today():
                "on Thursdays the recovery session counts in full.")
     today = today_iso()
     cl = D["checklist"].get(today, {})
-    cols = st.columns(5)
     labels = [("train", "Trained"), ("calories", "Calories 2700+"),
               ("protein", "Protein 110 g+"), ("creatine", "Creatine 5 g"),
-              ("sleep", "Slept 7 h+")]
+              ("sleep", "Slept 7 h+"), ("posture", "Posture 6 min")]
+    cols = st.columns(len(labels))
     new_cl = {}
     for col, (key, label) in zip(cols, labels):
         with col:
@@ -1281,15 +1337,126 @@ def page_data():
             st.error(f"Could not read that file: {ex}")
 
 
+def page_posture():
+    st.title("Posture")
+    st.caption("A reader's spine bends over books; a lifter's spine learns to stand "
+               "back up. Six minutes a day, plus five desk rules, plus a plan that "
+               "already pulls more than it pushes.")
+
+    st.subheader("First, one honest note")
+    st.write("Rounded upper back and a forward head are the normal cost of long "
+             "reading hours, and they respond very well to exactly this routine. "
+             "Visibly uneven shoulders are usually one-sided habit too, but they "
+             "deserve one professional look: book a single session with a "
+             "physiotherapist, ideally before the barbell lifts around week 9 to 12, "
+             "and ask them to screen your spine and shoulder mechanics. If they "
+             "clear you, train with total confidence. See a doctor promptly if you "
+             "ever have numbness, tingling, sharp back pain, or pain running down "
+             "an arm or leg. This page is training, not treatment.")
+
+    st.subheader("The daily six minutes")
+    rows = [{"Drill": d["name"], "Dose": d["dose"], "Cue": d["cue"], "Tutorial": d["link"]}
+            for d in POSTURE_PROTOCOL]
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True,
+                 column_config={"Tutorial": st.column_config.LinkColumn(
+                     "Tutorial", display_text="watch")})
+
+    st.subheader("The five desk rules")
+    st.write("1. Screen top at eye level; a laptop needs a stand or a stack of books "
+             "plus an external keyboard.")
+    st.write("2. Elbows at about ninety degrees, shoulders heavy and relaxed, feet "
+             "flat on the floor.")
+    st.write("3. Every 30 to 45 minutes, stand and move for two minutes. Pair it with "
+             "your pomodoro breaks; this single rule outranks every exercise here.")
+    st.write("4. Phone at eye level, not in your lap. The neck ages in the lap.")
+    st.write("5. Alternate the shoulder that carries your bag, and the hand that "
+             "drives the mouse when you can.")
+
+    st.subheader("Already working for you in the gym plan")
+    st.write("Face pulls, seated rows, back extensions, dead hangs, band pull-aparts "
+             "and suitcase carries are all posture work wearing a training plan's "
+             "clothes. Every pull day is therapy. The plan deliberately keeps pulling "
+             "volume at or above pushing volume for exactly this reason.")
+
+
+def page_manual():
+    st.title("How to Use")
+    st.caption("The whole system on one page. Read once, then live in the loops.")
+
+    st.subheader("One-time setup, your first week")
+    st.write("1. At the gym, ask the front desk for the free new-member equipment "
+             "orientation. Bring the Machine Directory page, confirm every code, "
+             "photograph the placards, and write the seat settings into Notes.")
+    st.write("2. On the Reminders page, set your gym time, download the calendar "
+             "file, and import it into Google Calendar or your iPhone calendar.")
+    st.write("3. Open this app on your phone browser, use Add to Home Screen, and "
+             "train from that icon.")
+    st.write("4. If cloud storage is configured, confirm the Data and Settings page "
+             "says Cloud connected. If it says Local file mode, download a backup "
+             "whenever you finish a week.")
+
+    st.subheader("The daily loop")
+    st.write("Morning: open Today, log bodyweight, read the epigraph, glance at the "
+             "session. During study: every pomodoro break, stand for two minutes; do "
+             "the six-minute Posture Protocol once at any break. At the gym: open "
+             "Log a Session in one tab and Rest Timer and Study in another; enter "
+             "each exercise as you finish it, and let every rest deal one flashcard. "
+             "Evening: tick the ledger honestly. The training tick keeps the streak; "
+             "Thursday recovery counts in full.")
+
+    st.subheader("The weekly loop")
+    st.write("Sunday evening, open Progress. Read the 7-day average bodyweight, not "
+             "any single day. Flat for two weeks: add 200 kcal per day. Rising faster "
+             "than half a kilo per week: subtract 150. Scan the consistency ledger "
+             "and let an unbroken row become something you refuse to break.")
+
+    st.subheader("The monthly loop")
+    st.write("Film your main lifts from the side once a month and compare against the "
+             "tutorials. Every 7th or 8th week, run a deload: same workouts, half the "
+             "sets, about 70 percent of the weight. If in Local file mode, download "
+             "a backup on the first of the month.")
+
+    st.subheader("The quarterly loop")
+    st.write("Every 10 to 12 weeks: a lipid panel at a clinic, logged on the "
+             "Cholesterol and Health page, and an InBody scan at the gym for muscle "
+             "versus fat. Watch trends, not single readings.")
+
+    st.subheader("What each page is for")
+    st.write("Today: streak, session, ledger, bodyweight, and what to eat right now.")
+    st.write("The Seven Days: the full plan with machine names and tutorials.")
+    st.write("Log a Session: your training diary; prefilled with last time's numbers.")
+    st.write("Rest Timer and Study: rest countdowns that deal flashcards.")
+    st.write("Posture: the six-minute protocol and the desk rules.")
+    st.write("Progress: streak grid, bodyweight trend, and every lift's history.")
+    st.write("Nutrition: targets, a model day, and Taiwan-specific swaps.")
+    st.write("Cholesterol and Health: lipid history against reference ranges.")
+    st.write("Machine Directory: your gym's codes, confirmed by placard.")
+    st.write("Reminders: the calendar file that makes your phone remember.")
+    st.write("The Library: every teacher, program and reference worth your time.")
+    st.write("Data and Settings: profile, storage status, backup and restore.")
+
+    st.subheader("The five laws")
+    st.write("1. Hit the top of the rep range on all sets with clean form, then add "
+             "2.5 kg next time. That single rule is the entire progression system.")
+    st.write("2. The calendar never breaks, only the intensity flexes: wrecked days "
+             "become recovery days, never zero days.")
+    st.write("3. Muscle is built by food and sleep; training only places the order.")
+    st.write("4. Soreness is fine. Sharp pain is information: stop, and if it "
+             "persists, see a professional.")
+    st.write("5. Log everything the moment it happens. Memory is not a training tool.")
+
+
 # -----------------------------------------------------------------------------
 # Router
 # -----------------------------------------------------------------------------
 
 PAGES = {
     "Today": page_today,
+    "How to Use": page_manual,
     "The Seven Days": page_plan,
     "Log a Session": page_log,
     "Rest Timer and Study": page_rest,
+    "Posture": page_posture,
     "Progress": page_progress,
     "Nutrition": page_nutrition,
     "Cholesterol and Health": page_health,
