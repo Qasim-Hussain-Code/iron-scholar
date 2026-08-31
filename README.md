@@ -9,7 +9,7 @@ flashcards (bioinformatics, immunology, machine learning) between sets, a
 nutrition reference, lipid-panel tracking, an equipment directory, and a
 curated library of open-access resources.
 
-A Posture page carries a six-minute daily protocol and five desk rules, aimed
+The Posture page carries a six-minute daily protocol and five desk rules, aimed
 at the rounded upper back and forward head that long reading hours produce. A
 How to Use page states the whole system on one screen: the one-time setup, the
 daily, weekly, monthly and quarterly loops, what each page is for, and the five
