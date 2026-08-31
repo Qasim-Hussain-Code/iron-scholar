@@ -1,6 +1,6 @@
 # The Iron Scholar
 
-*Mens sana in corpore sano.*
+*"Mens sana in corpore sano."*
 
 A single-file Streamlit application that unifies a training ledger with a
 study companion. It provides a structured weekly programme, session logging,
