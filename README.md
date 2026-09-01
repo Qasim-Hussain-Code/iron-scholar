@@ -6,7 +6,7 @@ A single-file Streamlit application that unifies a training ledger with a
 study companion. It provides a structured weekly programme, session logging,
 a daily adherence ledger, a rest timer that interleaves spaced-repetition
 flashcards (bioinformatics, immunology, machine learning) between sets, a
-nutrition reference, lipid-panel tracking, an equipment directory, and a
+nutrition reference, lipid-panel tracking, an equipment directory, and a structured
 curated library of open-access resources.
 
 The Posture page carries a six-minute daily protocol and five desk rules, aimed
