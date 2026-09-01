@@ -87,7 +87,7 @@ contents of the active store.
 
 ## Disclaimers
 
-The training material is intended for a healthy adult beginner; discontinue
+**Note:** The training material is intended for a healthy adult beginner; discontinue
 any exercise that provokes sharp pain. The health page supports educational
 self-tracking and is not medical advice. Interpret lipid panels and all
 clinical values with a qualified physician.
